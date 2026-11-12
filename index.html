@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Axel Martínez · Análisis de datos</title>
+  <meta name="description" content="Portafolio de Axel Alejandro Martínez Ramírez: 11 proyectos de análisis de datos con datos abiertos de México. SQL, Python, medición de marketing y visualización.">
+  <meta property="og:title" content="Axel Martínez · Análisis de datos">
+  <meta property="og:description" content="11 proyectos con datos abiertos de México: precios, salud, ciudad y marketing.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#fcfcfb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a78d6'/%3E%3Crect x='7' y='17' width='4' height='8' rx='1' fill='white'/%3E%3Crect x='14' y='11' width='4' height='14' rx='1' fill='white'/%3E%3Crect x='21' y='7' width='4' height='18' rx='1' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#proyectos" data-i18n="skip">Saltar a los proyectos</a>
+
+  <header class="top">
+    <a class="brand" href="#inicio" aria-label="Inicio">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Axel Martínez</span>
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#aporte" data-i18n="nav.value">Qué aporto</a>
+      <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
+      <a href="#metodo" data-i18n="nav.method">Método</a>
+      <a href="#perfil" data-i18n="nav.profile">Perfil</a>
+      <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+    </nav>
+    <div class="controls">
+      <button class="control" id="lang" type="button" aria-label="Switch to English">EN</button>
+      <button class="control" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-text">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Análisis de datos · Ciudad de México</p>
+        <h1 data-i18n="hero.title">Convierto datos desordenados en <em>decisiones claras</em>.</h1>
+        <p class="lead" data-i18n="hero.lead">Soy Axel Alejandro Martínez Ramírez. Extraigo, limpio y analizo datos con SQL y Python, y los explico en español e inglés para que un equipo pueda actuar.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contacto" data-i18n="hero.cta1">Hablemos</a>
+          <a class="btn" href="#proyectos" data-i18n="hero.cta2">Ver los 11 proyectos</a>
+        </div>
+      </div>
+
+      <figure class="heat" aria-labelledby="heat-title">
+        <figcaption>
+          <strong id="heat-title" data-i18n="heat.title">¿Cuándo hay más choques en la Ciudad de México?</strong>
+          <span data-i18n="heat.subtitle">Incidentes viales confirmados por hora, 2022 a 2023. Pasa el cursor o toca una celda.</span>
+        </figcaption>
+        <div class="heat-grid" id="heat" role="img" aria-label="Mapa de calor de incidentes viales por hora y día de la semana. El máximo es el viernes a las 19:00, con 17.3 incidentes por hora; el mínimo, el martes a las 3:00, con 1.2."></div>
+        <div class="heat-foot">
+          <p class="heat-readout" id="heat-readout" aria-live="polite"></p>
+          <div class="heat-legend" aria-hidden="true">
+            <span data-i18n="heat.less">menos</span><i></i><i></i><i></i><i></i><i></i><span data-i18n="heat.more">más</span>
+          </div>
+        </div>
+        <a class="heat-link" href="https://github.com/martinezramirezaxelalejandro04-ui/choques-cdmx" data-i18n="heat.link">De 504 mil reportes al C5 quedan 171 mil incidentes confirmados. Ver el proyecto ↗</a>
+      </figure>
+    </section>
+
+    <section class="stats" aria-label="Resumen en números">
+      <div class="stat"><b data-count="11">11</b><span data-i18n="stats.projects">proyectos publicados</span></div>
+      <div class="stat"><b data-count="2.4" data-decimals="1" data-suffix=" M">2.4 M</b><span data-i18n="stats.records">de registros reales analizados</span></div>
+      <div class="stat"><b data-count="116">116</b><span data-i18n="stats.tests">pruebas automáticas</span></div>
+      <div class="stat"><b data-count="6">6</b><span data-i18n="stats.sources">fuentes de datos abiertas</span></div>
+    </section>
+
+    <section class="block" id="aporte">
+      <header class="block-head">
+        <p class="eyebrow">01</p>
+        <h2 data-i18n="value.title">Qué puedo aportar a tu equipo</h2>
+        <p data-i18n="value.intro">Cada afirmación lleva a un proyecto donde se puede comprobar.</p>
+      </header>
+      <div class="value-grid">
+        <article class="value">
+          <h3 data-i18n="value.1.t">Extraer y limpiar datos</h3>
+          <p data-i18n="value.1.p">De 1.46 millones de filas crudas a tablas comparables, con cada paso documentado: cuántas filas quedan y por qué se quitaron las demás.</p>
+          <a href="https://github.com/martinezramirezaxelalejandro04-ui/canasta-basica-mx" data-i18n="value.1.a">Evidencia: Canasta Básica MX ↗</a>
+        </article>
+        <article class="value">
+          <h3 data-i18n="value.2.t">SQL y Python reproducibles</h3>
+          <p data-i18n="value.2.p">Consultas con CTE y funciones de ventana, procesos que corren de principio a fin con un comando y 116 pruebas automáticas que los respaldan.</p>
+          <a href="https://github.com/martinezramirezaxelalejandro04-ui/canasta-basica-mx/tree/main/sql" data-i18n="value.2.a">Evidencia: consultas SQL ↗</a>
+        </article>
+        <article class="value">
+          <h3 data-i18n="value.3.t">Medición de marketing</h3>
+          <p data-i18n="value.3.p">Indicadores de paid media calculados correctamente, pruebas A/B sin falsas alarmas y efectividad de campañas con línea base y prueba placebo.</p>
+          <a href="https://github.com/martinezramirezaxelalejandro04-ui/paid-media-kit" data-i18n="value.3.a">Evidencia: Paid Media Kit ↗</a>
+        </article>
+        <article class="value">
+          <h3 data-i18n="value.4.t">Comunicar hallazgos</h3>
+          <p data-i18n="value.4.p">Una conclusión por gráfica, cifras que cualquiera entiende y limitaciones a la vista. En español y en inglés (C1).</p>
+          <a href="https://github.com/martinezramirezaxelalejandro04-ui/sismos-septiembre" data-i18n="value.4.a">Evidencia: ¿Tiembla más en septiembre? ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="proyectos">
+      <header class="block-head">
+        <p class="eyebrow">02</p>
+        <h2 data-i18n="projects.title">Once preguntas, once respuestas con datos</h2>
+        <p data-i18n="projects.intro">Todos usan datos abiertos, explican su método y dicen qué no se puede afirmar.</p>
+      </header>
+      <div class="chips" role="group" aria-label="Filtrar proyectos por tema" id="chips"></div>
+      <div class="cards" id="cards" aria-live="polite"></div>
+      <noscript><p>Activa JavaScript para ver los proyectos, o visítalos en <a href="https://github.com/martinezramirezaxelalejandro04-ui">GitHub</a>.</p></noscript>
+    </section>
+
+    <section class="block" id="metodo">
+      <header class="block-head">
+        <p class="eyebrow">03</p>
+        <h2 data-i18n="method.title">Cómo trabajo</h2>
+        <p data-i18n="method.intro">Un resultado llamativo es una razón para revisar, no para publicar.</p>
+      </header>
+      <ol class="principles">
+        <li><h3 data-i18n="method.1.t">Primero la pregunta</h3><p data-i18n="method.1.p">Cada análisis empieza con una decisión que alguien necesita tomar.</p></li>
+        <li><h3 data-i18n="method.2.t">Limpieza documentada</h3><p data-i18n="method.2.p">Cada paso dice cuántas filas quedan y por qué.</p></li>
+        <li><h3 data-i18n="method.3.t">Comparaciones justas</h3><p data-i18n="method.3.p">Mismo producto, misma tienda; indicadores sobre totales, no promedios de promedios.</p></li>
+        <li><h3 data-i18n="method.4.t">Resultados comprobables</h3><p data-i18n="method.4.p">Código con pruebas automáticas y datos que cualquiera puede volver a descargar.</p></li>
+        <li><h3 data-i18n="method.5.t">Limitaciones a la vista</h3><p data-i18n="method.5.p">Lo que los datos no permiten afirmar también se escribe.</p></li>
+      </ol>
+
+      <h3 class="sub" data-i18n="errors.title">Tres errores que estuvieron a punto de publicarse</h3>
+      <div class="errors">
+        <article class="error">
+          <p class="error-num"><s>+2.6 °C</s> <span aria-hidden="true">→</span> +0.7 °C</p>
+          <h4 data-i18n="errors.1.t">Un calentamiento que no existía</h4>
+          <p data-i18n="errors.1.p">La fuente de temperaturas cambiaba de modelo meteorológico en 2017 y creaba un salto falso. Pedir un solo modelo para los 46 años lo corrigió.</p>
+          <a href="https://github.com/martinezramirezaxelalejandro04-ui/calor-extremo-mx" data-i18n="errors.1.a">Calor extremo MX ↗</a>
+        </article>
+        <article class="error">
+          <p class="error-num"><s>51</s> <span aria-hidden="true">→</span> 29</p>
+          <h4 data-i18n="errors.2.t">Oraciones de 487 palabras</h4>
+          <p data-i18n="errors.2.p">Caracteres invisibles en las notas al pie de Wikipedia pegaban oraciones y exageraban la dificultad de lectura. Al limpiarlos, los artículos "muy difíciles" bajaron de 51 a 29.</p>
+          <a href="https://github.com/martinezramirezaxelalejandro04-ui/lectura-facil-salud" data-i18n="errors.2.a">Lectura fácil en salud ↗</a>
+        </article>
+        <article class="error">
+          <p class="error-num"><s>−45%</s> <span aria-hidden="true">→</span> 0%</p>
+          <h4 data-i18n="errors.3.t">El cerdo no bajó 45%</h4>
+          <p data-i18n="errors.3.p">La mediana nacional del espinazo de cerdo cayó de $129 a $71 porque cambió la mezcla de tiendas visitadas. En las mismas 114 tiendas, el precio típico no cambió.</p>
+          <a href="https://github.com/martinezramirezaxelalejandro04-ui/canasta-basica-mx" data-i18n="errors.3.a">Canasta Básica MX ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="perfil">
+      <header class="block-head">
+        <p class="eyebrow">04</p>
+        <h2 data-i18n="profile.title">Perfil</h2>
+      </header>
+      <div class="profile">
+        <div class="timeline">
+          <article>
+            <p class="when">2025</p>
+            <h3 data-i18n="profile.job.t">Pasante de Logística y Operaciones de Servicio · HONOR México</h3>
+            <p data-i18n="profile.job.p">Reportes de desempeño del proveedor de paquetería, conciliación de liquidaciones y seguimiento de incidencias de principio a fin.</p>
+          </article>
+          <article>
+            <p class="when">2025</p>
+            <h3 data-i18n="profile.lead.t">Jefe de Secretaría General · Sociedad de Alumnos de Sistemas Biomédicos, UNAM</h3>
+            <p data-i18n="profile.lead.p">Enlace entre la sociedad estudiantil, la facultad y organizaciones externas; planeación y ejecución de proyectos con plazos y presupuesto.</p>
+          </article>
+          <article>
+            <p class="when">2023 – 2024</p>
+            <h3 data-i18n="profile.proj.t">Líder de proyecto · Proyect Ingenious, Facultad de Ingeniería</h3>
+            <p data-i18n="profile.proj.p">Lideré un equipo multidisciplinario que obtuvo el primer lugar entre los equipos participantes.</p>
+          </article>
+          <article>
+            <p class="when">2022 – 2026</p>
+            <h3 data-i18n="profile.edu.t">Ingeniería Mecatrónica · Facultad de Ingeniería, UNAM</h3>
+          </article>
+        </div>
+        <aside class="skills">
+          <h3 data-i18n="skills.daily">Uso habitual</h3>
+          <ul class="tags"><li>Python (pandas)</li><li data-i18n="skills.excel">Excel avanzado</li></ul>
+          <h3 data-i18n="skills.applied">Aplicadas en estos proyectos</h3>
+          <ul class="tags"><li>SQL</li><li>NumPy</li><li>matplotlib</li><li>pytest</li><li data-i18n="skills.apis">APIs de datos abiertos</li><li data-i18n="skills.tests">Pruebas de hipótesis</li><li data-i18n="skills.sim">Simulación</li></ul>
+          <h3 data-i18n="skills.certs">Certificaciones</h3>
+          <ul class="plain">
+            <li data-i18n="cert.1">Análisis de Datos con Python (Pandas) · Kaggle</li>
+            <li data-i18n="cert.2">Excel: Básico a Intermedio · Santander Open Academy</li>
+            <li data-i18n="cert.3">Fundamentos de Estrategia de Marketing · SCRUMstudy</li>
+            <li data-i18n="cert.4">Scrum Fundamentals Certified · SCRUMstudy</li>
+          </ul>
+          <h3 data-i18n="skills.lang">Idiomas</h3>
+          <ul class="plain"><li data-i18n="lang.es">Español, lengua materna</li><li data-i18n="lang.en">Inglés, C1</li></ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <p class="eyebrow">05</p>
+      <h2 data-i18n="contact.title">¿Buscas a alguien que cuide los datos y los explique claro?</h2>
+      <p data-i18n="contact.p">Busco un puesto como analista de datos, con interés en marketing digital y medición de campañas. Estoy en Coyoacán, Ciudad de México.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:martinez.ramirez.axel.alejandro04@gmail.com" data-i18n="contact.email">Escríbeme un correo</a>
+        <a class="btn" href="https://www.linkedin.com/in/mart%C3%ADnez-ram%C3%ADrez-axel-alejandro-5ba156251" rel="noopener">LinkedIn ↗</a>
+        <a class="btn" href="https://github.com/martinezramirezaxelalejandro04-ui" rel="noopener">GitHub ↗</a>
+      </div>
+      <p class="contact-mail">martinez.ramirez.axel.alejandro04@gmail.com</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p data-i18n="foot.sources">Datos: PROFECO y datos.gob.mx, C5 de la Ciudad de México, USGS, Wikimedia, Open-Meteo y Copernicus. Cada proyecto cita su fuente y su licencia.</p>
+    <p data-i18n="foot.made">Sitio hecho con HTML, CSS y JavaScript, sin dependencias.</p>
+  </footer>
+
+  <dialog class="viewer" id="viewer" aria-labelledby="viewer-title">
+    <div class="viewer-head">
+      <h3 id="viewer-title"></h3>
+      <button class="control" id="viewer-close" type="button" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="viewer-paper"><img id="viewer-img" alt=""></div>
+    <a class="btn" id="viewer-link" href="#" rel="noopener"></a>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
