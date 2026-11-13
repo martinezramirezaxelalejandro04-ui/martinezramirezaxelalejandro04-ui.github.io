@@ -325,3 +325,6 @@ img { max-width: 100%; display: block; }
 .feature-note { color: var(--ink-2); max-width: 46em; }
 .feature-cta { display: flex; flex-wrap: wrap; gap: 12px; }
 @media (max-width: 640px) { .feature-facts { grid-template-columns: 1fr; } }
+
+.feature h3 { font: 500 clamp(22px, 2.6vw, 28px)/1.2 var(--serif); letter-spacing: -.01em; }
+.feature + .feature { margin-top: 18px; }
