@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Axel Martínez · Skyline de datos</title>
+  <meta name="description" content="Portafolio de Axel Alejandro Martínez Ramírez: una ciudad 3D hecha de gráficas donde cada torre es un proyecto de análisis de datos con datos abiertos de México.">
+  <meta property="og:title" content="Axel Martínez · Skyline de datos">
+  <meta property="og:description" content="Once proyectos de análisis de datos convertidos en una ciudad que se recorre volando.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#02050b">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2302050b'/%3E%3Crect x='6' y='18' width='4' height='8' rx='1' fill='%233ee0ff'/%3E%3Crect x='14' y='9' width='4' height='17' rx='1' fill='%233ee0ff'/%3E%3Crect x='22' y='13' width='4' height='13' rx='1' fill='%23ffb454'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <video id="overlay" class="overlay" muted loop playsinline preload="none" aria-hidden="true"></video>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <div id="loader" role="status" aria-live="polite">
+    <div class="loader-inner">
+      <div class="loader-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="loader-title" data-i="loader.title">Construyendo la ciudad de datos</p>
+      <div class="bar"><span id="loader-bar"></span></div>
+      <p class="loader-pct" id="loader-pct">0%</p>
+    </div>
+  </div>
+
+  <a class="skip" href="#acerca" data-i="skip">Saltar al contenido</a>
+
+  <header class="hud">
+    <a class="brand" href="#inicio" aria-label="Inicio">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Axel Martínez</span>
+    </a>
+    <nav class="menu" aria-label="Secciones">
+      <a href="#acerca" data-i="nav.about">Acerca</a>
+      <button type="button" id="projects-toggle" aria-expanded="false" aria-controls="projects-menu"><span data-i="nav.projects">Proyectos</span> <small aria-hidden="true">▾</small></button>
+      <a href="#metodo" data-i="nav.method">Método</a>
+      <a href="#perfil" data-i="nav.profile">Perfil</a>
+      <a href="#contacto" data-i="nav.contact">Contacto</a>
+    </nav>
+    <div class="controls">
+      <button type="button" class="ctl" id="sound" aria-pressed="false" aria-label="Activar sonido ambiente">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path class="waves" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <button type="button" class="ctl" id="lang" aria-label="Switch to English">EN</button>
+    </div>
+    <ul id="projects-menu" class="dropdown" hidden>
+<!--PROJECT_MENU-->
+    </ul>
+  </header>
+
+  <div class="readout" aria-hidden="true">
+    <span class="ro-label">ZONA</span><span id="ro-zone">—</span>
+    <span class="ro-label">ALT</span><span id="ro-alt">000 m</span>
+  </div>
+  <div class="rail" aria-hidden="true"><i id="rail-fill"></i></div>
+  <div id="labels" aria-hidden="true"><div id="peak" class="peak"></div></div>
+  <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+
+  <main id="top">
+    <section id="inicio" class="scene hero" data-stop>
+      <div class="hero-copy">
+        <p class="eyebrow" data-i="hero.kicker">Análisis de datos · Ciudad de México</p>
+        <h1 data-i="hero.title">Convierto datos en <em>decisiones claras</em>.</h1>
+        <p class="lead" data-i="hero.lead">Soy Axel Alejandro Martínez Ramírez. Esta ciudad es una gráfica real: cada torre es una hora de la semana y su altura, los choques confirmados en la Ciudad de México entre 2022 y 2023.</p>
+        <p class="hint"><span class="hint-line" aria-hidden="true"></span><span data-i="hero.hint">Desplázate para volar</span></p>
+      </div>
+    </section>
+
+    <section id="acerca" class="scene about" data-stop>
+      <div class="card wide">
+        <p class="eyebrow">01</p>
+        <h2 data-i="about.title">Un analista que cuida el dato y lo explica claro</h2>
+        <p data-i="about.p1">Estudio Ingeniería Mecatrónica en la UNAM y trabajo con datos desde la operación. En HONOR México (2025): conciliación de liquidaciones, reportes de desempeño del proveedor y seguimiento de incidencias de principio a fin.</p>
+        <p data-i="about.p2">Fuera del trabajo convierto datos abiertos de México en preguntas con respuesta: once proyectos con método, pruebas y limitaciones a la vista.</p>
+        <dl class="stats">
+          <div><dt>11</dt><dd data-i="stats.1">proyectos</dd></div>
+          <div><dt>2.4 M</dt><dd data-i="stats.2">registros reales</dd></div>
+          <div><dt>116</dt><dd data-i="stats.3">pruebas automáticas</dd></div>
+          <div><dt>6</dt><dd data-i="stats.4">fuentes abiertas</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="proyectos" class="projects" aria-labelledby="projects-title">
+      <header class="section-head">
+        <p class="eyebrow">02</p>
+        <h2 id="projects-title" data-i="projects.title">Once torres, once preguntas</h2>
+        <p data-i="projects.intro">Vuela entre ellas con el scroll o ábrelas: cada una guarda su gráfica, su método y su código.</p>
+      </header>
+<!--PROJECT_STOPS-->
+    </section>
+
+    <section id="metodo" class="scene method" data-stop>
+      <div class="card wide">
+        <p class="eyebrow">03</p>
+        <h2 data-i="method.title">Cómo trabajo</h2>
+        <p class="sub" data-i="method.intro">Un resultado llamativo es una razón para revisar, no para publicar.</p>
+        <ol class="principles">
+          <li><h3 data-i="m1.t">Primero la pregunta</h3><p data-i="m1.p">Cada análisis empieza con una decisión que alguien necesita tomar.</p></li>
+          <li><h3 data-i="m2.t">Limpieza documentada</h3><p data-i="m2.p">Cada paso dice cuántas filas quedan y por qué.</p></li>
+          <li><h3 data-i="m3.t">Comparaciones justas</h3><p data-i="m3.p">Mismo producto, misma tienda; indicadores sobre totales.</p></li>
+          <li><h3 data-i="m4.t">Resultados comprobables</h3><p data-i="m4.p">Código con pruebas y datos que cualquiera puede descargar.</p></li>
+          <li><h3 data-i="m5.t">Limitaciones a la vista</h3><p data-i="m5.p">Lo que los datos no permiten afirmar también se escribe.</p></li>
+        </ol>
+        <h3 class="mini" data-i="errors.title">Tres errores que casi publico</h3>
+        <p data-i="errors.p">Un calentamiento falso de +2.6 °C que en realidad era +0.7 °C, oraciones de 487 palabras que no existían y un cerdo que no bajó 45%. Los tres están documentados en sus proyectos.</p>
+      </div>
+    </section>
+
+    <section id="perfil" class="scene profile" data-stop>
+      <div class="card wide">
+        <p class="eyebrow">04</p>
+        <h2 data-i="profile.title">Perfil</h2>
+        <div class="profile-grid">
+          <ol class="timeline">
+            <li><span class="when">2025</span><h3 data-i="tl1.t">Pasante de Logística y Operaciones de Servicio · HONOR México</h3><p data-i="tl1.p">Reportes de desempeño del proveedor, conciliación de liquidaciones y seguimiento de incidencias.</p></li>
+            <li><span class="when">2025</span><h3 data-i="tl2.t">Jefe de Secretaría General · Sociedad de Alumnos de Sistemas Biomédicos, UNAM</h3><p data-i="tl2.p">Enlace institucional y ejecución de proyectos con plazos y presupuesto.</p></li>
+            <li><span class="when">2023 – 2024</span><h3 data-i="tl3.t">Líder de proyecto · Proyect Ingenious, Facultad de Ingeniería</h3><p data-i="tl3.p">Primer lugar entre los equipos participantes.</p></li>
+            <li><span class="when">2022 – 2026</span><h3 data-i="tl4.t">Ingeniería Mecatrónica · UNAM</h3></li>
+          </ol>
+          <div class="skills">
+            <h3 data-i="sk.daily">Uso habitual</h3>
+            <ul class="tags"><li>Python (pandas)</li><li data-i="sk.excel">Excel avanzado</li></ul>
+            <h3 data-i="sk.applied">Aplicadas en estos proyectos</h3>
+            <ul class="tags"><li>SQL</li><li>NumPy</li><li>matplotlib</li><li>pytest</li><li data-i="sk.apis">APIs de datos abiertos</li><li data-i="sk.tests">Pruebas de hipótesis</li><li data-i="sk.sim">Simulación</li></ul>
+            <h3 data-i="sk.certs">Certificaciones</h3>
+            <ul class="plain">
+              <li data-i="c1">Análisis de Datos con Python (Pandas) · Kaggle</li>
+              <li data-i="c2">Excel: Básico a Intermedio · Santander Open Academy</li>
+              <li data-i="c3">Fundamentos de Estrategia de Marketing · SCRUMstudy</li>
+              <li data-i="c4">Scrum Fundamentals Certified · SCRUMstudy</li>
+            </ul>
+            <h3 data-i="sk.lang">Idiomas</h3>
+            <ul class="plain"><li data-i="l1">Español, lengua materna</li><li data-i="l2">Inglés, C1</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="scene contact" data-stop>
+      <div class="card wide">
+        <p class="eyebrow">05</p>
+        <h2 data-i="contact.title">¿Buscas a alguien que cuide los datos y los explique claro?</h2>
+        <p data-i="contact.p">Busco un puesto como analista de datos, con interés en marketing digital y medición de campañas. Estoy en Coyoacán, Ciudad de México.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:martinez.ramirez.axel.alejandro04@gmail.com" data-i="contact.email">Escríbeme un correo</a>
+          <a class="btn" href="https://www.linkedin.com/in/mart%C3%ADnez-ram%C3%ADrez-axel-alejandro-5ba156251" rel="noopener">LinkedIn ↗</a>
+          <a class="btn" href="https://github.com/martinezramirezaxelalejandro04-ui" rel="noopener">GitHub ↗</a>
+          <a class="btn" href="https://martinezramirezaxelalejandro04-ui.github.io/" rel="noopener" data-i="contact.classic">Versión clásica ↗</a>
+        </div>
+        <p class="mail">martinez.ramirez.axel.alejandro04@gmail.com</p>
+        <p class="foot" data-i="foot">Datos: PROFECO y datos.gob.mx, C5 de la Ciudad de México, USGS, Wikimedia, Open-Meteo y Copernicus. Ciudad dibujada en tiempo real con three.js.</p>
+      </div>
+    </section>
+  </main>
+
+  <aside id="panel" class="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" hidden>
+    <button type="button" class="icon-btn" id="panel-close" aria-label="Cerrar">✕</button>
+    <p class="kicker" id="panel-kicker"></p>
+    <h2 id="panel-title"></h2>
+    <p class="figure" id="panel-figure"></p>
+    <p class="label" id="panel-label"></p>
+    <p class="question" id="panel-question"></p>
+    <div class="gallery" id="gallery">
+      <div class="slide" id="slide"></div>
+      <div class="gal-ctrl">
+        <button type="button" class="icon-btn" id="gal-prev" aria-label="Anterior">‹</button>
+        <div class="dots" id="gal-dots"></div>
+        <button type="button" class="icon-btn" id="gal-next" aria-label="Siguiente">›</button>
+      </div>
+      <p class="caption" id="caption"></p>
+    </div>
+    <ul class="tags" id="panel-tags"></ul>
+    <div class="actions">
+      <a class="btn primary" id="panel-repo" target="_blank" rel="noopener" data-i="code.long">Ver el código ↗</a>
+      <button type="button" class="btn" id="panel-prev" data-i="prev">← Anterior</button>
+      <button type="button" class="btn" id="panel-next" data-i="next">Siguiente →</button>
+    </div>
+  </aside>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+    <button type="button" class="icon-btn" id="lightbox-close" aria-label="Cerrar">✕</button>
+    <img id="lightbox-img" alt="">
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
