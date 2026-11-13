@@ -101,3 +101,20 @@ Para una imagen usa `"type": "image"`. Cada proyecto acepta cualquier número de
 - Genera primero a la resolución más baja: sobre una escena oscura casi no se nota la diferencia y consume menos créditos.
 - Si un video no cierra bien en bucle, recórtalo a los primeros 5 segundos.
 - Comprime con `ffmpeg -i entrada.mp4 -vcodec libx264 -crf 28 -an salida.mp4` (sin audio, el sitio los reproduce silenciados).
+
+---
+
+## Extra. Fondo para el banner del perfil de GitHub
+
+El banner actual (`perfil/assets/banner.png`) lo diseñé en HTML con capturas reales de Cenote y Mi peso en el tiempo, porque la conexión con Higgsfield desde aquí es de solo lectura y no puede generar imágenes. Si quieres una versión con arte generado, usa este prompt como **fondo** y pon encima el texto y las capturas.
+
+**Modelo:** cualquier modelo de imagen. **Formato:** 16:5 (por ejemplo 3200 x 1000). Sin texto ni personas.
+
+```
+Ultra-wide abstract background for a data analyst portfolio banner. Deep teal-black base,
+faint luminous grid of thin lines receding into depth, soft cyan glow in the upper left,
+warm amber glow in the lower right, subtle drifting particles, gentle depth of field,
+cinematic and clean, generous empty space on the left for text, no text, no logos, no people.
+```
+
+Guárdalo como `fondo-banner.png` y pásamelo (o ponlo en `assets/` del repositorio del perfil): lo integro como fondo del banner con el texto y las capturas encima. No escribas datos personales en el prompt.
