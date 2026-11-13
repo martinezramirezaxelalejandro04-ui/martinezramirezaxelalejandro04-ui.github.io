@@ -99,7 +99,12 @@ html.no-webgl body { background: radial-gradient(120% 80% at 50% 0%, #0b2433, va
   display: flex; gap: 12px; align-items: baseline; width: 100%; padding: 9px 12px; border: 0; border-radius: 10px;
   background: transparent; text-align: left; cursor: pointer; font: 500 14.5px var(--body); color: var(--ink);
 }
-.dropdown button:hover { background: rgba(110, 214, 255, .12); }
+.dropdown button:hover, .dropdown .menu-link:hover { background: rgba(110, 214, 255, .12); }
+.dropdown .menu-link {
+  display: flex; gap: 12px; align-items: baseline; padding: 9px 12px; border-radius: 10px;
+  font: 500 14.5px var(--body); color: var(--ink); text-decoration: none;
+}
+.dropdown .menu-extra { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
 .dropdown .mn { font: 600 12px var(--head); color: var(--cyan); letter-spacing: .08em; }
 
 .readout {

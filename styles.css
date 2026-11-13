@@ -313,3 +313,15 @@ img { max-width: 100%; display: block; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .btn, .card { transition: none; }
 }
+
+/* ---------- Engineering feature (Cenote) ---------- */
+.feature {
+  display: grid; gap: 18px; padding: clamp(22px, 3vw, 34px);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow);
+}
+.feature-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.feature-facts b { display: block; font: 500 clamp(30px, 4vw, 44px)/1 var(--serif); letter-spacing: -.02em; }
+.feature-facts span { display: block; margin-top: 6px; font-size: 14px; color: var(--muted); }
+.feature-note { color: var(--ink-2); max-width: 46em; }
+.feature-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 640px) { .feature-facts { grid-template-columns: 1fr; } }
