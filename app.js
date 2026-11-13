@@ -124,7 +124,7 @@
     "hero.eyebrow": "Data analysis · Mexico City",
     "hero.title": "I turn messy data into <em>clear decisions</em>.",
     "hero.lead": "I'm Axel Alejandro Martínez Ramírez. I extract, clean and analyse data with SQL and Python, and explain it in Spanish and English so a team can act on it.",
-    "hero.cta1": "Let's talk", "hero.cta2": "See all 11 projects",
+    "hero.cta1": "Let's talk", "hero.cta2": "See all 11 projects", "hero.cta3": "3D version ↗",
     "heat.title": "When do crashes happen in Mexico City?",
     "heat.subtitle": "Confirmed road incidents per hour, 2022 to 2023. Hover or tap a cell.",
     "heat.less": "fewer", "heat.more": "more",
